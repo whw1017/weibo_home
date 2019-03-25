@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -8,11 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    //指明表名
+    protected $table = 'users';
     use Notifiable;
 
     /**
      * The attributes that are mass assignable.
-     *
+     * 信息过滤
      * @var array
      */
     protected $fillable = [
@@ -21,7 +23,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
-     *
+     * 隐藏敏感信息
      * @var array
      */
     protected $hidden = [
