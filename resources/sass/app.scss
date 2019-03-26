@@ -40,3 +40,14 @@ footer{
   }
 }
 
+section.user_info{
+  padding-bottom: 10px;
+  margin-top: 20px;
+  text-align: center;
+  .gravatar {
+    float: left;
+    max-width: 50px;
+    border-radius: 50%;
+  }
+}
+
