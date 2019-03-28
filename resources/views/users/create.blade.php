@@ -30,6 +30,8 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary">注册</button>
+{{--防止--}}
+                        {{csrf_field()}}
                     </form>
         @stop
 
