@@ -30,7 +30,7 @@ class UsersController extends Controller
         ]);
 
         session()->flash('success','欢迎进入');
-        return redirect()->route('users.show',[$user]);
+        return redirect()->route('users.show',[$user]);//跳转页面
     }
 
 }
