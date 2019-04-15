@@ -15,6 +15,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" id="logout" href="#">
                             <form action="{{route('logout')}}" method="POST">
+                                {{--隐藏域  相当于<input type = "hidden" name = "_token" value = "。。。"--}}
                                 {{csrf_field()}}
                                 {{--隐藏域  相当于<input type = "hidden" name = "_method" value = "DELETE"--}}
                                 {{ method_field('DELETE') }}

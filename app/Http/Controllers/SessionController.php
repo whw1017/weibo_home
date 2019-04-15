@@ -27,7 +27,7 @@ class SessionController extends Controller
         );
         //var_dump($credentials);//返回email与password的数组
         //身份认证
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials,$request->has('remember'))) { //第二个参数表示表单是否开启“记住我”
             //重定向
             session()->flash('success','欢迎回来');
             return redirect()->route('users.show',[Auth::user()]);
@@ -35,6 +35,13 @@ class SessionController extends Controller
             session()->flash('danger','邮箱或密码不匹配');
             return redirect()->back()->withInput();
         }
+    }
+
+    //退出
+    public function destroy(){
+        Auth::logout();
+        session()->flash('success','已成功退出');
+        return redirect('login');
     }
 
 }
